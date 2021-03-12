@@ -2,8 +2,8 @@ name: 重新Fork-Lienol仓库
 on:
   workflow_dispatch:
 
-#  schedule:
-#    - cron: 0 8 */5 * *
+  schedule:
+    - cron: 0 8 */5 * *
 
 jobs: 
   build:
@@ -16,7 +16,7 @@ jobs:
         github_token: ${{ secrets.REPO_TOKEN }}
         upstream_repository: Lienol/openwrt
         upstream_branch: 19.07
-        target_repository: zoranke/OpenWrt-build     #修改成你的帐号/仓库名字
-        target_branch: Lienol                                #你仓库的分支
+        target_repository: zoranke/openwrt     #修改成你的帐号/仓库名字
+        target_branch: 19.07                                #你仓库的分支
         force: true
         tags: false

@@ -2,8 +2,8 @@ name: 重新Fork仓库
 on:
   workflow_dispatch:
 
-#  schedule:
-#    - cron: 0 8 */5 * *
+  schedule:
+    - cron: 0 8 */5 * *
 
 jobs: 
   build:

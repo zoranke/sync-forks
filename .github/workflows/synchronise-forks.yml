@@ -1,4 +1,4 @@
-name: 重新Fork仓库
+name: 重新ForkCustom仓库
 on:
   workflow_dispatch:
 
@@ -8,7 +8,7 @@ on:
 jobs: 
   build:
     runs-on: Ubuntu-20.04
-    name: 重新ForkCustom仓库
+    name: 重新Fork仓库
     steps:
     - name: 重新拉取281677160/build-openwrt仓库
       uses: danshui-git/github-forks-sync-action@main

@@ -17,6 +17,6 @@ jobs:
         upstream_repository: 281677160/Custom
         upstream_branch: main
         target_repository: zoranke/Custom     #修改成你的帐号/仓库名字
-        target_branch: pach-1                                #你仓库的分支
+        target_branch: main                                #你仓库的分支
         force: true
         tags: false

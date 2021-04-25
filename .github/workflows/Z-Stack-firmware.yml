@@ -1,0 +1,22 @@
+name: 定时拉取Z-Stack-firmware仓库
+on:
+  workflow_dispatch:
+
+  schedule:
+   - cron: 0 8 */5 * *
+
+jobs: 
+  build:
+    runs-on: Ubuntu-20.04
+    name: 重新Fork仓库
+    steps:
+    - name: 重新拉取Z-Stack-firmware仓库
+      uses: danshui-git/github-forks-sync-action@main
+      with:
+        github_token: ${{ secrets.REPO_TOKEN }}
+        upstream_repository: Koenkk/Z-Stack-firmware
+        upstream_branch: master
+        target_repository: zoranke/Z-Stack-firmware     #修改成你的帐号/仓库名字
+        target_branch: master                                #你仓库的分支
+        force: true
+        tags: false

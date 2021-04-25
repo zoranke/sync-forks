@@ -1,0 +1,22 @@
+name: 定时拉取cc2652p_E72-2G4M20S1E仓库
+on:
+  workflow_dispatch:
+
+  schedule:
+   - cron: 0 8 */5 * *
+
+jobs: 
+  build:
+    runs-on: Ubuntu-20.04
+    name: 重新Fork仓库
+    steps:
+    - name: 重新拉取cc2652p_E72-2G4M20S1E仓库
+      uses: danshui-git/github-forks-sync-action@main
+      with:
+        github_token: ${{ secrets.REPO_TOKEN }}
+        upstream_repository: egony/cc2652p_E72-2G4M20S1E
+        upstream_branch: master
+        target_repository: zoranke/cc2652p_E72-2G4M20S1E    #修改成你的帐号/仓库名字
+        target_branch: master                                #你仓库的分支
+        force: true
+        tags: false
